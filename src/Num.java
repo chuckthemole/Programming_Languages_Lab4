@@ -8,20 +8,17 @@
 public abstract class Num<AnyType> extends Number implements Comparable<AnyType> {
 	@Override
 	public float floatValue() {
-		float f = 0;
-		return f;
+		return (float) this.doubleValue();
 	}
 	
 	@Override
 	public long longValue() {
-		long l = 0;
-		return l;
+		return (long) this.doubleValue();
 	}
 	
 	@Override
 	public int intValue() {
-		int i = 0;
-		return i;
+		return (int) this.doubleValue();
 	}
 	
 	@Override
@@ -46,6 +43,11 @@ public abstract class Num<AnyType> extends Number implements Comparable<AnyType>
 	@Override
 	public boolean equals(Object o) {
 		boolean equal = false;
+		Num n = (Num) o;
+		
+		if (this.compareTo(n) == 0) 
+			equal = true;
+		
 		return equal;
 	}
 }
