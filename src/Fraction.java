@@ -11,11 +11,17 @@ public class Fraction extends Num {
 	private int numerator;
 	private int denominator;
 	
-	//Constructors
+	/*
+	 * Constructor
+	 * int n is numerator
+	 * int d is denominator
+	 * creates a Fraction
+	 */
     public Fraction(int n, int d) {
         int gcd;
         Scanner s;
 
+	    //denominator cannot be 0
         if (d == 0) {
             System.out.print("\n0 is not acceptable for " +
                     "denominator!");
@@ -30,7 +36,8 @@ public class Fraction extends Num {
                 }
             } while (d == 0);
         }
-
+        
+        //reduce fraction
         gcd = gcdRecur(n, d);
         n /= gcd;
         d /= gcd;

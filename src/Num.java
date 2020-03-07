@@ -5,7 +5,7 @@
  * Date:		2020_3_2
  */
 
-public abstract class Num<AnyType> extends Number implements Comparable<AnyType> {
+public abstract class Num extends Number implements Comparable<Num> {
 	@Override
 	public float floatValue() {
 		return (float) this.doubleValue();
@@ -22,18 +22,11 @@ public abstract class Num<AnyType> extends Number implements Comparable<AnyType>
 	}
 	
 	@Override
-	public int compareTo(Object o) {
-		compareTo(o);
-		return 0;
-	}
-	
 	public int compareTo(Num n) {
 		double d1 = n.doubleValue();
 		double d2 = this.doubleValue();
 		int compare = -2;
-		
-		System.out.println("d1: " + d1 + "\nd2: " + d2);
-		
+
 		compare = (d1 == d2) ? 0 : 
 			(d1 > d2) ? -1 : 1;
 		

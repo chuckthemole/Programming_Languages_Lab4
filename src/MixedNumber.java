@@ -12,10 +12,17 @@ public class MixedNumber extends Num {
 	private int denominator;
 	private int wholeNumber;
 	
+	/*
+	 * Constructor
+	 * int number is the leading number in MixedNumber
+	 * int n is numerator
+	 * int d is denominator
+	 */
 	MixedNumber(int number, int n, int d) {
 		 int gcd;
 	     Scanner s;
 
+	     //denominator cannot be 0
 	     if (d == 0) {
 	    	 System.out.print("\n0 is not acceptable for " +
 	    			 "denominator!");
@@ -31,6 +38,7 @@ public class MixedNumber extends Num {
 	         } while (d == 0);
 	     }
 
+	     //reduce fraction
 	     gcd = gcdRecur(n, d);
 	     n /= gcd;
 	     d /= gcd;
